@@ -1,13 +1,14 @@
 package main;
 
 import hash.HashExternalChaining;
+import hash.HashInternalChaining;
 import hash.HashLinearOpenChaining;
 
 public class Main {
 	public static void main(String[] args) {
 		//hashLinearOpenChaining();
-		hashExternalChaining();
-		
+		//hashExternalChaining();
+		hashInternalChaining();
 	}
 	
 	public static void hashLinearOpenChaining() {
@@ -62,6 +63,31 @@ public class Main {
 		hash.remove(1);
 		hash.remove(12);
 		hash.print();
+		
+	}
+	
+	public static void hashInternalChaining() {
+		HashInternalChaining hash = new HashInternalChaining(20, 10);
+		
+		
+		hash.print();
+		hash.insert(10);
+		hash.insert(1);
+		hash.print();
+		hash.insert(100);
+		hash.insert(95);
+		hash.print();
+		hash.insert(24);
+		hash.insert(36);
+		hash.print();
+		hash.insert(49);
+		hash.insert(48);
+		hash.print();
+		hash.insert(38);
+		hash.print();
+		
+		System.out.println(hash.search(38));
+		
 		
 	}
 	
