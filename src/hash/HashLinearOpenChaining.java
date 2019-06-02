@@ -1,10 +1,10 @@
 package hash;
 
-public class Hash {
+public class HashLinearOpenChaining {
 	private int [] hashTable;
 	private int lenght;
 	
-	public Hash(int lenght) {
+	public HashLinearOpenChaining(int lenght) {
 		this.lenght = lenght;
 		this.hashTable = new int [lenght];
 		
@@ -85,15 +85,6 @@ public class Hash {
 					break;
 				}
 			}while(j != i);
-		}
-	}
-	
-	public void remove (int key) {
-		int i = search(key);
-		
-		if (i != -1) {
-			hashTable[i] = -1;
-			
 		}
 	}
 	

@@ -1,12 +1,19 @@
 package main;
 
-import hash.Hash;
+import hash.HashExternalChaining;
+import hash.HashLinearOpenChaining;
 
 public class Main {
 	public static void main(String[] args) {
-		Hash h;
+		//hashLinearOpenChaining();
+		hashExternalChaining();
 		
-		h = new Hash(10);
+	}
+	
+	public static void hashLinearOpenChaining() {
+		HashLinearOpenChaining h;
+		
+		h = new HashLinearOpenChaining(10);
 		
 		h.print();
 		h.insert(1);
@@ -22,10 +29,40 @@ public class Main {
 		h.print();
 		
 		System.out.println(h.search(15));
+		System.out.println(h.search(25));
 		System.out.println(h.search(99));
 		
-		h.remove(1);
-		h.remove(95);
 		h.print();
 	}
+	
+	public static void hashExternalChaining() {
+		HashExternalChaining hash = new HashExternalChaining(10);
+		
+		hash.print();
+		hash.insert(10);
+		hash.insert(1);
+		hash.insert(100);
+		hash.insert(95);
+		hash.insert(24);
+		hash.insert(36);
+		hash.insert(49);
+		hash.insert(48);
+		hash.insert(38);
+		hash.insert(26);
+		hash.insert(15);
+		hash.insert(23);
+		hash.insert(12);
+		hash.insert(02);
+		hash.insert(100);
+		hash.insert(157);
+		hash.print();
+		System.out.println(hash.search(36).getKey());
+		System.out.println(hash.search(100).getKey());
+		hash.remove(100);
+		hash.remove(1);
+		hash.remove(12);
+		hash.print();
+		
+	}
+	
 }
