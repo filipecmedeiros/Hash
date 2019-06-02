@@ -1,5 +1,6 @@
 package main;
 
+import hash.DoubleHashOpenChaining;
 import hash.HashExternalChaining;
 import hash.HashInternalChaining;
 import hash.HashLinearOpenChaining;
@@ -8,7 +9,8 @@ public class Main {
 	public static void main(String[] args) {
 		//hashLinearOpenChaining();
 		//hashExternalChaining();
-		hashInternalChaining();
+		//hashInternalChaining();
+		doubleHashOpenChaining();
 	}
 	
 	public static void hashLinearOpenChaining() {
@@ -34,6 +36,21 @@ public class Main {
 		System.out.println(h.search(99));
 		
 		h.print();
+	}
+	
+	public static void doubleHashOpenChaining() {
+		DoubleHashOpenChaining hash = new DoubleHashOpenChaining(10);
+		
+		hash.print();
+		hash.insert(1);
+		hash.insert(10);
+		hash.insert(100);
+		hash.insert(22);
+		hash.insert(15);
+		hash.insert(35);
+		hash.insert(18);
+		hash.print();
+		System.out.println(hash.search(35));
 	}
 	
 	public static void hashExternalChaining() {
